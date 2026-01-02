@@ -3,15 +3,15 @@ image: node:18
 pages:
   stage: deploy
   variables:
-    NEXT_PUBLIC_BASE_PATH: "https://n6t762sn6d-svg.github.io/wavvvvylines/" # set to repo name for project pages, or "" for user/group pages
+    NEXT_PUBLIC_BASE_PATH: "/wavvvvylines" # set to repo name for project pages, or "" for user/group pages
   script:
     - npm install
-    - npm run export
+    - npm run build --workspace personal-website
+    - npm run export --workspace personal-website
     - mkdir -p public
-    - cp -R apps/personal-website/out/* public/
+    - cp -R apps/personal-website/out/. public/
   artifacts:
     paths:
       - public
   only:
     - main
-
