@@ -1,0 +1,19 @@
+{
+  "name": "wavvvvylines",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace personal-website",
+    "build": "npm run build --workspace personal-website",
+    "start": "npm run start --workspace personal-website",
+    "lint": "npm run lint --workspace personal-website",
+    "export": "npm run export --workspace personal-website"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
+

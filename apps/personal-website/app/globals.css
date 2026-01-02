@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black text-white font-body antialiased;
+  min-height: 100vh;
+}
+
+a {
+  @apply text-white underline decoration-white/60 decoration-2 underline-offset-4 transition hover:decoration-white;
+}
+
+.glass-panel {
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
