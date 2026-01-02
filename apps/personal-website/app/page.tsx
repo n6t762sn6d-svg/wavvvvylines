@@ -24,6 +24,7 @@ export default function HomePage() {
               <li>Web performance, accessibility, and production UI quality</li>
               <li>Cross-functional collaboration and clear technical communication</li>
             </ul>
+            
           </div>
 
           <div className="space-y-6">
