@@ -1,4 +1,4 @@
-name: Deploy Next.js site to Page
+name: Deploy Next.js site to Pages
 
 on:
   push:
@@ -15,8 +15,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  APP_DIR: apps/personal-website   # <-- change this to your Next app path
-  NEXT_PUBLIC_BASE_PATH: "/wavvvvylines" # "/<repo-name>" for project pages; "" for user/org pages
+  APP_DIR: apps/personal-website
+  NEXT_PUBLIC_BASE_PATH: "/wavvvvylines"
 
 jobs:
   build:
@@ -24,33 +24,52 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+      
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package-lock.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine package manager"
+            exit 1
+          fi
+      
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "none"
-
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: next
-
-      - name: Install dependencies (in app)
+      
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.APP_DIR }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+      
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      
+      - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
         working-directory: ${{ env.APP_DIR }}
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
-
-      - name: Build with Next.js (in app)
-        working-directory: ${{ env.APP_DIR }}
-        run: |
-          npm run build
-          npm run export
-
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
