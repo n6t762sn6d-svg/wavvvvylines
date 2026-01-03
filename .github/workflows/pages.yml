@@ -16,7 +16,6 @@ concurrency:
 
 env:
   APP_DIR: apps/personal-website
-  NEXT_PUBLIC_BASE_PATH: "/wavvvvylines"
 
 jobs:
   build:
