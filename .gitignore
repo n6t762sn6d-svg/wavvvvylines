@@ -7,7 +7,5 @@ dist
 coverage
 *.log
 pnpm-lock.yaml
-package-lock.json
-yarn.lock
 .env*
 
