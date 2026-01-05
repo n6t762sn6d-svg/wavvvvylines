@@ -1,9 +1,31 @@
 import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const siteUrl = "https://wavvvvylines.com"; 
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-body"
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-display"
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://wavvvvylines.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+    },
+  },
   title: "Casey Lentz — Senior Software Engineer",
   description: "Senior Software Engineer focused on scalable UI systems, design patterns, and cross-functional technical leadership.",
   openGraph: {
@@ -35,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen">
         {children}
       </body>
