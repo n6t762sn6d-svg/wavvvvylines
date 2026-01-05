@@ -1,33 +1,19 @@
 # wavvvvylines
 
-Monorepo scaffold with a Next.js personal website (`apps/personal-website`) using Base UI and Tailwind
-CSS. The site is configured for static export so it can be published to GitHub Pages.
+A small monorepo that powers a personal site and leaves room for future side projects. The root keeps
+tooling and TypeScript config shared, while each app stays self-contained.
 
-## Getting started
+## What lives here
 
-From the repo root:
+- `apps/personal-website/` — Next.js + Tailwind static site for the Casey Lentz portfolio; ships to a
+  static bundle for simple hosting (Pages, S3, etc.).
+- `tsconfig.base.json` — shared compiler settings to keep packages consistent.
+- `package.json` — workspace root with scripts that forward into apps.
 
-```bash
-npm install
-npm run dev
-```
+## Intent and principles
 
-## Deploying to GitHub Pages
-
-1. If you are publishing to a project page (e.g. `username.github.io/repo-name`), set
-   `NEXT_PUBLIC_BASE_PATH=/repo-name` before building so asset URLs are prefixed correctly.
-2. Export the site to static HTML:
-
-```bash
-npm run export
-```
-
-The static bundle will be written to `apps/personal-website/out`. Point your Pages workflow at that
-directory (or copy it to the folder you deploy).
-
-## Structure
-
-- `package.json` — workspace root with scripts that forward into the app.
-- `tsconfig.base.json` — shared TypeScript options for the monorepo.
-- `apps/personal-website/` — Next.js app with Tailwind CSS, Base UI, and static-export config.
+- Keep the personal site fast and portable by exporting static HTML.
+- Keep styling minimal and utility-first with Tailwind; adopt Base UI components only where they add
+  clarity.
+- Keep the root lean so additional apps/packages can plug in without heavy rewiring.
 
