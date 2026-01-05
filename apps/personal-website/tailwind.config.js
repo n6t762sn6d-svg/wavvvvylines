@@ -29,8 +29,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        display: ["'Space Grotesk'", "ui-sans-serif", "system-ui"],
-        body: ["'Inter'", "ui-sans-serif", "system-ui"]
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui"],
+        body: ["var(--font-body)", "ui-sans-serif", "system-ui"]
       }
     }
   },
