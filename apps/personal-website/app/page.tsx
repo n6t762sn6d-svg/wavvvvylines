@@ -51,7 +51,7 @@ export default function HomePage() {
               </div>
 
               <div>
-                <p className="font-semibold text-white">Underground Elephant</p>
+                <p className="font-semibold text-white">UE.co</p>
                 <p className="text-white/70">Frontend Engineer | 2015 - 2017</p>
                 <ul className="mt-2 list-disc space-y-1 pl-5">
                   <li>Develop responsive web pages with semantic HTML5, SASS, PHP, JavaScript, jQuery.</li>
