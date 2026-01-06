@@ -24,7 +24,7 @@ export default function HomePage() {
               <li>Web performance, accessibility, and production UI quality</li>
               <li>Cross-functional collaboration and clear technical communication</li>
             </ul>
-            
+
           </div>
 
           <div className="space-y-6">
@@ -52,7 +52,7 @@ export default function HomePage() {
 
               <div>
                 <p className="font-semibold text-white">Underground Elephant</p>
-                <p className="text-white/70">Frontend Engineer | 2017 - 2018</p>
+                <p className="text-white/70">Frontend Engineer | 2015 - 2017</p>
                 <ul className="mt-2 list-disc space-y-1 pl-5">
                   <li>Develop responsive web pages with semantic HTML5, SASS, PHP, JavaScript, jQuery.</li>
                   <li>Integrate internal APIs with third-party vendors using PHP and Node.</li>
