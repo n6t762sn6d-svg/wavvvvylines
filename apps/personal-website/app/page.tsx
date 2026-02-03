@@ -6,10 +6,7 @@ export default function HomePage() {
           <p className="text-sm uppercase tracking-[0.2em] text-white/70">Casey Lentz</p>
           <h1 className="mt-1 font-display text-3xl text-white">Senior Software Engineer</h1>
           <p className="mt-3 max-w-3xl text-sm text-white/80">
-            Senior Software Engineer focused on building, operating, and evolving scalable UI systems
-            using JavaScript, TypeScript, React, and CSS, with strong technical judgment,
-            cross-functional communication, and a focus on quality.
-          </p>
+Senior Software Engineer specializing in building, operating, and evolving scalable frontend systems using React and TypeScript. Focused on high-quality implementation, performance, accessibility, and translating product and design requirements into reliable, maintainable UI          </p>
         </div>
       </header>
 
@@ -18,8 +15,8 @@ export default function HomePage() {
           <div className="space-y-6">
             <h2 className="font-display text-lg text-white">Skills and Expertise</h2>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-white/80">
-              <li>Component-driven design, scalable UI patterns, and design systems</li>
-              <li>Technical input into scoping, prioritization, and tradeoff decisions</li>
+              <li>Component-driven UI architecture, scalable UI patterns, and design systems</li>
+              <li>Design-system implementation and evolution</li>
               <li>UI development with JavaScript, TypeScript, React, and CSS</li>
               <li>Web performance, accessibility, and production UI quality</li>
               <li>Cross-functional collaboration and clear technical communication</li>
