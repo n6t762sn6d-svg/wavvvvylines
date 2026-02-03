@@ -1,3 +1,5 @@
+import { projectList } from "./helpers";
+
 export default function HomePage() {
   return (
     <main className="mx-auto flex max-w-5xl flex-col gap-10 px-4 py-12 md:px-8">
@@ -62,6 +64,28 @@ Senior Software Engineer specializing in building, operating, and evolving scala
         </div>
 
         <aside className="space-y-8 md:sticky md:top-8 md:self-start md:h-min">
+         
+         <div>
+          <h2 className="font-display text-lg text-white">Past Works</h2>
+          
+                        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-white/80">
+            {projectList.map((project) => (
+              <li key={project.title}>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 no-underline text-white hover:text-white"
+                >
+                  {project.title}
+                  <span aria-hidden="true" className="text-white/70">
+                    ↗
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+         </div>
           <div>
             <h2 className="font-display text-lg text-white">Languages &amp; Libraries</h2>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-white/80">
