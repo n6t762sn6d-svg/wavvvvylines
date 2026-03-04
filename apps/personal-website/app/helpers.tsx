@@ -1,6 +1,11 @@
 
 export const projectList = [
   {
+    title: "NewsBank",
+    alt: "NewsBank",
+    link: "https://www.genealogybank.com/"
+  },
+  {
     title: "Digital Media Solutions",
     alt: "digital media solutions",
     link: "https://digitalmediasolutions.com/"
