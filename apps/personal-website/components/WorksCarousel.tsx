@@ -1,6 +1,7 @@
 // components/WorksCarousel.tsx
 "use client"
 
+import Image from "next/image"
 import { useRef, useState, useCallback, useEffect } from "react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -13,48 +14,56 @@ const works = [
     title: "GenealogyBank",
     blurb: "Scalable component architecture for a historical records platform. Accessibility-first, performant.",
     url: "https://www.genealogybank.com/",
+    image: "/work-images/genealogybank.png",
   },
-  {
+  { 
     tags: ["infra", "ui"],
     title: "Underground Elephant",
     blurb: "Rebuilt deployment pipelines, shipped customer-facing interfaces.",
     url: "https://digitalmediasolutions.com/",
+    image: "/work-images/undergroundelephant.png",
   },
   {
     tags: ["html", "sass", "node"],
     title: "Zipquote",
     blurb: "Responsive UI with semantic HTML5 and SASS. Internal API integrations via Node.",
     url: "http://zipquote.com",
+    image: "/work-images/zipquote-platform.png",
   },
   {
     tags: ["wordpress", "jquery"],
     title: "Electric California",
     blurb: "Responsive web presence. Semantic HTML5, jQuery, WordPress.",
     url: "http://www.electriccalifornia.com/",
+    image: "/assets/images/electric-california.png",
   },
   {
     tags: ["e-commerce", "api"],
     title: "Mor Furniture",
     blurb: "Frontend across responsive product pages. Third-party vendor integrations.",
     url: "http://www.morfurniture.com/",
+    image: "/work-images/mor-furniture.png",
   },
   {
     tags: ["html", "css", "js"],
     title: "Soccer Loco",
     blurb: "E-commerce UI. Semantic markup, responsive CSS, vendor integrations.",
     url: "http://www.soccerloco.com",
+    image: "/work-images/soccer-loco.jpg",
   },
   {
     tags: ["wordpress", "php"],
     title: "Instant Checkmate",
     blurb: "People search platform. Responsive pages, WordPress at scale.",
     url: "http://www.instantcheckmate.com",
+    image: "/work-images/instantcheckmate.png",
   },
   {
     tags: ["html", "css", "js"],
     title: "PitchEngine",
     blurb: "PR and media platform. HTML, CSS, JavaScript with WordPress and jQuery.",
     url: "http://www.pitchengine.com",
+    image: "/work-images/pitch-engine.jpg",
   },
 ]
 
@@ -131,15 +140,15 @@ export function WorksCarousel() {
         </Button>
 
         {/* Dots */}
-        <div className="flex items-center gap-1 ml-1">
+        <div className="flex  gap-1 ml-1">
           {works.map((_, i) => (
             <div
               key={i}
               className={cn(
-                "h-[3px] rounded-full bg-border transition-all duration-200",
-                i === idx ? "w-3.5 bg-muted-foreground/50" : "w-[3px]"
+                "h-1 w-1 rounded-full border transition-all duration-200",
+                i === idx ? "bg-muted-foreground border-muted-foreground w-3" : "bg-transparent border-border"
               )}
-            />
+            ></div>
           ))}
         </div>
       </div>
@@ -154,15 +163,14 @@ function WorkCard({
   title,
   blurb,
   url,
+  image,
 }: {
   tags: string[]
   title: string
   blurb: string
   url: string
+  image: string
 }) {
-  const domain = new URL(url).hostname.replace("www.", "")
-  const screenshot = `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`
-  const [imgFailed, setImgFailed] = useState(false)
 
   return (
     <a
@@ -173,18 +181,18 @@ function WorkCard({
       style={{ width: CARD_WIDTH }}
     >
       {/* Thumbnail */}
-      <div className="h-[140px] bg-muted border-b border-border overflow-hidden flex items-center justify-center">
-        {imgFailed ? (
-          <span className="text-[10px] text-muted-foreground tracking-wide">{domain}</span>
-        ) : (
-          <img
-            src={screenshot}
+      <div className="h-[140px] bg-muted border-b border-border overflow-hidden flex items-center justify-center relative">
+    
+          <Image
+            src={image}
             alt={title}
-            loading="lazy"
+            fill
+            sizes="272px"
+            priority={false}
             className="w-full h-full object-cover object-top opacity-80 hover:opacity-100 transition-opacity"
-            onError={() => setImgFailed(true)}
+            
           />
-        )}
+       
       </div>
 
       {/* Info */}

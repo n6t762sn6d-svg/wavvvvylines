@@ -20,7 +20,7 @@ export default function Home() {
       {/* Role */}
       <section className="mb-12">
         <h1 className="text-[22px] font-light tracking-tight leading-tight mb-4">
-           Software<br />Engineer
+           Software Engineer
         </h1>
         <p className="text-xs text-muted-foreground leading-[1.8] max-w-[520px]">
           Specializing in building, operating, and evolving scalable systems
