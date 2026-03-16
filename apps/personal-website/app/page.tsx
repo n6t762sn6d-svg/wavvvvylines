@@ -9,24 +9,34 @@ export default function Home() {
       <header className="flex justify-between items-start mb-14">
         <span className="text-sm text-foreground">
           Casey Lentz
-          <span className="inline-block w-[5px] h-[5px] rounded-full bg-foreground mx-1 align-middle relative -top-[1px]" />
+          <span 
+            className="inline-block w-[5px] h-[5px] rounded-full bg-foreground mx-1 align-middle relative -top-[1px]" 
+            aria-hidden="true"
+          />
         </span>
         <div className="text-xs text-muted-foreground text-right leading-relaxed">
-          Software Engineer<br />
-          Remote, CA
+          Senior Software Engineer<br />
+          
+          Remote, CA <br/>
+          <a
+            href="https://www.linkedin.com/in/casey-lentz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-foreground no-underline"
+            aria-label="LinkedIn (opens in new tab)"
+          >
+            linkedin ↗
+          </a>
         </div>
       </header>
 
       {/* Role */}
       <section className="mb-12">
         <h1 className="text-[22px] font-light tracking-tight leading-tight mb-4">
-           Software Engineer
+           Senior Software Engineer
         </h1>
         <p className="text-xs text-muted-foreground leading-[1.8] max-w-[520px]">
-          Specializing in building, operating, and evolving scalable systems
-          using React and TypeScript. Focused on high-quality implementation, performance,
-          accessibility, and translating product and design requirements into reliable,
-          maintainable UI.
+         Senior frontend engineer specializing in React and TypeScript — building scalable, accessible component systems, design systems, and high-performance interfaces that integrate with REST and GraphQL APIs. Focused on Core Web Vitals, WCAG compliance, and translating product and design requirements into reliable, production-grade UI.
         </p>
       </section>
 
@@ -40,10 +50,16 @@ export default function Home() {
             "design systems",
             "react",
             "typescript",
-            "css",
+            "graphql",
+            "Rest APIs",
+            "state management",
+            "wcag / a11y",
+            "core web vitals",
+            "shadcn / bootstrap / baseui / mui",
+            "tailwind / scss / css",
+            "next.js",
+            "ci/cd",
             "web performance",
-            "accessibility",
-            "cross-functional collab",
           ].map((s) => (
             <span
               key={s}
@@ -87,39 +103,6 @@ export default function Home() {
 
       <Divider />
 
-
-
-
-      {/* Languages */}
-      <Section label="languages & libraries">
-        <div className="grid grid-cols-2 gap-y-1 gap-x-8">
-          {[
-            "JavaScript, TypeScript",
-            "React, Tailwind, Next.js",
-            "HTML, CSS",
-            "Jest unit testing",
-          ].map((l) => (
-            <span key={l} className="text-[11px] text-muted-foreground">{l}</span>
-          ))}
-        </div>
-      </Section>
-
-      <Divider />
-
-      {/* Contact */}
-      <Section label="contact">
-        <a
-          href="https://www.linkedin.com/in/casey-lentz/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-foreground border-b border-border hover:border-muted-foreground transition-colors"
-        >
-          linkedin.com/in/casey-lentz ↗
-        </a>
-      </Section>
-
-      <Divider />
-
       {/* Education */}
       <Section label="education">
         <div className="text-xs text-foreground">Web Design & Interactive Media — BFA</div>
@@ -142,9 +125,9 @@ function Section({ label, children }: { label: string; children: React.ReactNode
   return (
     <section className="mb-10 last:mb-0">
       <div className="flex items-center gap-2.5 mb-5">
-        <span className="text-[10px] tracking-[.2em] uppercase text-muted-foreground/60 shrink-0">
+        <h2 className="text-[10px] tracking-[.2em] uppercase text-muted-foreground/60 shrink-0">
           {label}
-        </span>
+        </h2>
         <div className="flex-1 h-px bg-border" />
       </div>
       {children}
@@ -160,9 +143,9 @@ const experience = [
     period: "2018 – present",
     title: "Senior Software Engineer",
     bullets: [
-      "Estimate, plan and develop interfaces with React, TypeScript, CSS through CI/CD.",
-      "Integrate third-party APIs to improve the user experience.",
-      "Gather business intelligence reports for product stakeholders.",
+      "Estimate, plan and develop interfaces collaboratively in an agile environment between product, design, and backend engineering teams.",
+      "Contribute in peer reviews to maintain code quality and establish engineering standards across the team.",
+      "Implement and maintain a React component library and design system used across multiple products, ensuring accessibility, performance, and consistency.",
     ],
   },
   {
@@ -172,11 +155,11 @@ const experience = [
     bullets: [
       "Audit and set up client infrastructure and deployment processes.",
       "Develop user interfaces with HTML, PHP and JavaScript.",
-      "Manage client expectations.",
+      "Translated technical constraints and tradeoffs into clear language for non-technical stakeholders.",
     ],
   },
   {
-    company: "UE.co",
+    company: "Underground Elephant",
     period: "2015 – 2017",
     title: "Frontend Engineer",
     bullets: [
