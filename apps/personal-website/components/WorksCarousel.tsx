@@ -35,7 +35,7 @@ const works = [
     title: "Electric California",
     blurb: "Responsive web presence. Semantic HTML5, jQuery, WordPress.",
     url: "http://www.electriccalifornia.com/",
-    image: "/assets/images/electric-california.png",
+    image: "/work-images/electric-california.png",
   },
   {
     tags: ["e-commerce", "api"],
