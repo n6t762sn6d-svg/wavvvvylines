@@ -1,22 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const siteUrl = "https://wavvvvylines.com"; 
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-  variable: "--font-body"
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-sans'
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  display: "swap",
-  variable: "--font-display"
-});
+const siteUrl = "https://wavvvvylines.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wavvvvylines.com'),
@@ -57,8 +49,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="min-h-screen">
+    <html lang="en" className={cn(geist.variable, "font-sans")}>
+      <body className="min-h-screen font-sans">
         {children}
       </body>
     </html>
