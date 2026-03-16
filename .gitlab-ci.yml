@@ -13,5 +13,10 @@ pages:
   artifacts:
     paths:
       - public
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+      - .next/cache/
   only:
     - main
