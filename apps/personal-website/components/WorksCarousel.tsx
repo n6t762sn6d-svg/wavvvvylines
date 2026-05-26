@@ -12,7 +12,7 @@ const works = [
   {
     tags: ["next.js", "tailwind", "react", "typescript", "php",  "ci/cd", "bootstrap", "mui"],
     title: "GenealogyBank",
-    blurb: "Architected React and TypeScript frontend for high-traffic platform. Integrated REST APIs while driving WCAG accessibility and Core Web Vitals improvements through CI/CD.",
+    blurb: "I architect Next.js, React and TypeScript frontend ui for  high-traffic platforms. Integrated REST APIs while driving WCAG accessibility and Core Web Vitals improvements through CI/CD.",
     url: "https://www.genealogybank.com/",
     image: "/work-images/genealogybank.png",
   },
@@ -48,7 +48,7 @@ const works = [
     tags: ["e-commerce", "magento", "html", "css", "js"],
     title: "Soccer Loco",
     blurb: "Created e-commerce interfaces with semantic HTML, responsive CSS, and JavaScript. Integrated Magento platform and third-party vendor systems for enhanced functionality.",
-    url: "http://www.soccerloco.com",
+    url: "https://soccernation.com/",
     image: "/work-images/soccer-loco.jpg",
   },
   {
