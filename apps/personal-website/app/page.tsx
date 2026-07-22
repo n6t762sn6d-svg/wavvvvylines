@@ -15,7 +15,7 @@ export default function Home() {
           />
         </span>
         <div className="text-xs text-muted-foreground text-right leading-relaxed">
-          Senior Software Engineer<br />
+          Software Engineer<br />
           
           Remote, CA <br/>
           <a
@@ -33,31 +33,40 @@ export default function Home() {
       {/* Role */}
       <section className="mb-12">
         <h1 className="text-[22px] font-light tracking-tight leading-tight mb-4">
-           Senior Software Engineer
+          Software Engineer
         </h1>
         <p className="text-xs text-muted-foreground leading-[1.8] max-w-[520px]">
-         Senior frontend engineer specializing in React and TypeScript — building scalable, accessible component systems, design systems, and high-performance interfaces that integrate with REST and GraphQL APIs. Focused on Core Web Vitals, WCAG compliance, and translating product and design requirements into reliable, production-grade UI.
+         Software Engineer specializing in Next.js, React and TypeScript — building scalable, accessible component systems, design systems, and high-performance interfaces that integrate with REST and GraphQL APIs. Focused on Core Web Vitals, WCAG compliance, and translating product and design requirements into reliable, production-grade UI.
         </p>
       </section>
 
       <Divider />
 
+      {/* Past Works Carousel */}
+      <Section label="The Work">
+        <WorksCarousel />
+      </Section>
+
+        <Divider />
+
       {/* Skills */}
       <Section label="skills & expertise">
         <div className="flex flex-wrap gap-1.5">
           {[
-            "component architecture",
-            "design systems",
+            "next.js",
             "react",
             "typescript",
+            "tailwind / scss / css",
+            "component architecture",
+            "design systems",
             "graphql",
             "Rest APIs",
             "state management",
             "wcag / a11y",
             "core web vitals",
             "shadcn / bootstrap / baseui / mui",
-            "tailwind / scss / css",
-            "next.js",
+            
+            
             "ci/cd",
             "web performance",
           ].map((s) => (
@@ -70,16 +79,6 @@ export default function Home() {
           ))}
         </div>
       </Section>
-
-    
-
-
-      {/* Past Works Carousel */}
-      <Section label="The Work">
-        <WorksCarousel />
-      </Section>
-
-        <Divider />
 
       {/* Experience */}
       <Section label="experience">
