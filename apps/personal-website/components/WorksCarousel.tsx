@@ -27,7 +27,7 @@ const works = [
     tags: ["e-commerce", "magento", "html", "css", "javascript"],
     title: "Soccer Loco",
     blurb: "Created e-commerce interfaces with semantic HTML, responsive CSS, and JavaScript. Integrated Magento platform and third-party vendor systems for enhanced functionality.",
-    url: "https://soccerloco.net/",
+    url: "https://fanshoppe.live/",
     image: "/work-images/soccer-loco.jpg",
   },
     {
