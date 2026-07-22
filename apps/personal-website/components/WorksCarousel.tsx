@@ -10,11 +10,32 @@ import { cn } from "@/lib/utils"
 
 const works = [
   {
-    tags: ["next.js", "tailwind", "react", "typescript", "php",  "ci/cd", "bootstrap", "mui"],
+    tags: ["react", "next.js", "tailwind","typescript", "php",  "ci/cd", "bootstrap", "mui"],
     title: "GenealogyBank",
     blurb: "I architect Next.js, React and TypeScript frontend ui for  high-traffic platforms. Integrated REST APIs while driving WCAG accessibility and Core Web Vitals improvements through CI/CD.",
     url: "https://www.genealogybank.com/",
     image: "/work-images/genealogybank.png",
+  },
+    {
+    tags: ["e-commerce", "magento", "wordpress", "javascript", "html", "css"],
+    title: "Electric California",
+    blurb: "Built responsive e-commerce platform with HTML5, CSS, and JavaScript. Implemented product interfaces through Magento and WordPress backends.",
+    url: "http://www.electriccalifornia.com/",
+    image: "/work-images/electric-california.png",
+  },
+    {
+    tags: ["e-commerce", "magento", "html", "css", "javascript"],
+    title: "Soccer Loco",
+    blurb: "Created e-commerce interfaces with semantic HTML, responsive CSS, and JavaScript. Integrated Magento platform and third-party vendor systems for enhanced functionality.",
+    url: "https://soccerloco.net/",
+    image: "/work-images/soccer-loco.jpg",
+  },
+    {
+    tags: ["e-commerce", "api"],
+    title: "Mor Furniture",
+    blurb: "Developed responsive product pages and interfaces for e-commerce platform. Managed third-party vendor API integrations to streamline operations and experience.",
+    url: "http://www.morfurniture.com/",
+    image: "/work-images/mor-furniture.png",
   },
   { 
     tags: ["wordpress", "aws", "ui", "laravel", "php", "twig"],
@@ -30,27 +51,7 @@ const works = [
     url: "http://zipquote.com",
     image: "/work-images/zipquote-platform.png",
   },
-  {
-    tags: ["e-commerce", "magento", "wordpress", "javascript", "html", "css"],
-    title: "Electric California",
-    blurb: "Built responsive e-commerce platform with HTML5, CSS, and JavaScript. Implemented product interfaces through Magento and WordPress backends.",
-    url: "http://www.electriccalifornia.com/",
-    image: "/work-images/electric-california.png",
-  },
-  {
-    tags: ["e-commerce", "api"],
-    title: "Mor Furniture",
-    blurb: "Developed responsive product pages and interfaces for e-commerce platform. Managed third-party vendor API integrations to streamline operations and experience.",
-    url: "http://www.morfurniture.com/",
-    image: "/work-images/mor-furniture.png",
-  },
-  {
-    tags: ["e-commerce", "magento", "html", "css", "js"],
-    title: "Soccer Loco",
-    blurb: "Created e-commerce interfaces with semantic HTML, responsive CSS, and JavaScript. Integrated Magento platform and third-party vendor systems for enhanced functionality.",
-    url: "https://soccernation.com/",
-    image: "/work-images/soccer-loco.jpg",
-  },
+
   {
     tags: [ "conversion optimization", "node", "performance", "a/b testing", "javascript"],
     title: "Instant Checkmate",
