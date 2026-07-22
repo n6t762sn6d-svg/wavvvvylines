@@ -15,7 +15,7 @@ export default function Home() {
           />
         </span>
         <div className="text-xs text-muted-foreground text-right leading-relaxed">
-          Software Engineer<br />
+          Frontend Software Engineer<br />
           
           Remote, CA <br/>
           <a
@@ -33,10 +33,10 @@ export default function Home() {
       {/* Role */}
       <section className="mb-12">
         <h1 className="text-[22px] font-light tracking-tight leading-tight mb-4">
-          Software Engineer
+          Frontend Software Engineer
         </h1>
         <p className="text-xs text-muted-foreground leading-[1.8] max-w-[520px]">
-         Software Engineer specializing in Next.js, React and TypeScript — building scalable, accessible component systems, design systems, and high-performance interfaces that integrate with REST and GraphQL APIs. Focused on Core Web Vitals, WCAG compliance, and translating product and design requirements into reliable, production-grade UI.
+         Frontend Software Engineer specializing in Next.js, React and TypeScript — building scalable, accessible component systems, design systems, and high-performance interfaces that integrate with REST and GraphQL APIs. Focused on Core Web Vitals, WCAG compliance, and translating product and design requirements into reliable, production-grade UI.
         </p>
       </section>
 
