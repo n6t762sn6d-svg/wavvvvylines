@@ -5,6 +5,12 @@
 body {
   @apply bg-black text-white antialiased;
   min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
 }
 
 a {

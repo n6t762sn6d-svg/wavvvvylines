@@ -7,47 +7,26 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-
+import { ExternalLink } from 'lucide-react';
 const works = [
   {
     tags: ["react", "next.js", "tailwind","typescript", "php",  "ci/cd", "bootstrap", "mui"],
     title: "GenealogyBank",
-    blurb: "I architect Next.js, React and TypeScript frontend ui for  high-traffic platforms. Integrated REST APIs while driving WCAG accessibility and Core Web Vitals improvements through CI/CD.",
+    blurb: "Genealogy research platfrom built with React, TypeScript, Jest, Next.js, PHP, Tailwind, traditional CSS, MUI and Drupal paired with agentic workflows.",
     url: "https://www.genealogybank.com/",
     image: "/work-images/genealogybank.png",
   },
     {
     tags: ["e-commerce", "magento", "wordpress", "javascript", "html", "css"],
     title: "Electric California",
-    blurb: "Built responsive e-commerce platform with HTML5, CSS, and JavaScript. Implemented product interfaces through Magento and WordPress backends.",
+    blurb: "Lifestyle apparel brand Electric California custom designed e-commerce presence built with Magento and WordPress.",
     url: "http://www.electriccalifornia.com/",
     image: "/work-images/electric-california.png",
-  },
-    {
-    tags: ["e-commerce", "magento", "html", "css", "javascript"],
-    title: "Soccer Loco",
-    blurb: "Created e-commerce interfaces with semantic HTML, responsive CSS, and JavaScript. Integrated Magento platform and third-party vendor systems for enhanced functionality.",
-    url: "https://fanshoppe.live/",
-    image: "/work-images/soccer-loco.jpg",
-  },
-    {
-    tags: ["e-commerce", "api"],
-    title: "Mor Furniture",
-    blurb: "Developed responsive product pages and interfaces for e-commerce platform. Managed third-party vendor API integrations to streamline operations and experience.",
-    url: "http://www.morfurniture.com/",
-    image: "/work-images/mor-furniture.png",
-  },
-  { 
-    tags: ["wordpress", "aws", "ui", "laravel", "php", "twig"],
-    title: "Underground Elephant",
-    blurb: "Built WordPress and Laravel UI with performance optimization and AWS infrastructure. Implemented third-party APIs and vendor integrations to enhance user experience.",
-    url: "https://digitalmediasolutions.com/",
-    image: "/work-images/undergroundelephant.png",
   },
   {
     tags: ["html", "sass", "node", "php", "api"],
     title: "Zipquote",
-    blurb: "Developed responsive UI with semantic HTML5 and SASS styling. Managed Node.js backend integrations and PHP APIs for seamless internal data communication.",
+    blurb: "Ad-tech platform for insurance quote generation built with Node.js, PHP, REST API integrations and custom a/b testing software.",
     url: "http://zipquote.com",
     image: "/work-images/zipquote-platform.png",
   },
@@ -55,14 +34,14 @@ const works = [
   {
     tags: [ "conversion optimization", "node", "performance", "a/b testing", "javascript"],
     title: "Instant Checkmate",
-    blurb: "Developed people search platform with Node.js and REST API integrations. Implemented A/B testing and performance optimizations to improve conversion and user metrics.",
+    blurb: "People search platform built on top of Node.js, with a focus on conversion optimization, performance, and a/b testing.",
     url: "http://www.instantcheckmate.com",
     image: "/work-images/instantcheckmate.png",
   },
   {
     tags: ["html", "css", "js", 'razor', '.net'],
     title: "PitchEngine",
-    blurb: "Built PR and media platform with HTML, CSS, JavaScript, and Razor templates. Delivered responsive interfaces and ASP.NET WordPress integrations for content publishing.",
+    blurb: "PR and media platform disrupting the traditional press release model, built with ASP.NET, Razor, HTML, CSS and JavaScript.",
     url: "http://www.pitchengine.com",
     image: "/work-images/pitch-engine.jpg",
   },
@@ -214,35 +193,25 @@ function WorkCard({
     >
       {/* Thumbnail */}
       <div className="h-[140px] bg-muted border-b border-border overflow-hidden flex items-center justify-center relative">
-    
+     
           <Image
             src={image}
             alt={title}
             fill
-            sizes="272px"
+            sizes="272px"     
             priority={false}
-            className="w-full h-full object-cover object-top opacity-80 hover:opacity-100 transition-opacity"
-            
+            className="w-full h-full object-cover object-top"
           />
        
       </div>
 
       {/* Info */}
       <div className="p-3.5">
-        <div className="flex gap-1.5 flex-wrap mb-2">
-          {tags.map((t) => (
-            <Badge
-              key={t}
-              variant="secondary"
-              className="text-[9px] tracking-widest uppercase px-2 py-0.5 rounded"
-            >
-              {t}
-            </Badge>
-          ))}
-        </div>
-        <p className="text-xs text-foreground mb-1.5 font-normal">{title}</p>
-        <p className="text-[10px] text-muted-foreground leading-[1.7]">{blurb}</p>
+           <p className=" text-foreground mb-1.5 font-bold">{title} <ExternalLink className="inline" size={12}/></p>
+        <p className=" text-muted-foreground leading-[1.7]">{blurb}</p>
+        
       </div>
+      
     </a>
   )
 }

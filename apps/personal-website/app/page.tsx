@@ -1,99 +1,78 @@
 // app/page.tsx
+import { Badge } from "@/components/ui/badge";
 import { WorksCarousel } from "@/components/WorksCarousel"
-
+import { Terminal } from 'lucide-react';
+import { CircleSmall } from 'lucide-react';
+import Image from "next/image";
 export default function Home() {
   return (
-    <main className="max-w-[640px] mx-auto px-6 py-16 pb-24 font-mono">
+    <main className="max-w-4xl mx-auto px-6 py-16 pb-24 ">
 
-      {/* Header */}
-      <header className="flex justify-between items-start mb-14">
-        <span className="text-sm text-foreground">
-          Casey Lentz
-          <span 
-            className="inline-block w-[5px] h-[5px] rounded-full bg-foreground mx-1 align-middle relative -top-[1px]" 
-            aria-hidden="true"
-          />
-        </span>
-        <div className="text-xs text-muted-foreground text-right leading-relaxed">
-          Frontend Software Engineer<br />
-          
-          Remote, CA <br/>
-          <a
-            href="https://www.linkedin.com/in/casey-lentz/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-foreground no-underline"
-            aria-label="LinkedIn (opens in new tab)"
-          >
-            linkedin ↗
-          </a>
-        </div>
-      </header>
+
 
       {/* Role */}
       <section className="mb-12">
-        <h1 className="text-[22px] font-light tracking-tight leading-tight mb-4">
+        <h1 className="text-[27px] font-bold tracking-tight leading-tight mb-4 ">Casey Lentz <Terminal className="inline"/></h1>
+        <h2 className="text-[22px] font-bold tracking-tight leading-tight mb-4">
           Frontend Software Engineer
-        </h1>
-        <p className="text-xs text-muted-foreground leading-[1.8] max-w-[520px]">
-         Frontend Software Engineer specializing in Next.js, React and TypeScript — building scalable, accessible component systems, design systems, and high-performance interfaces that integrate with REST and GraphQL APIs. Focused on Core Web Vitals, WCAG compliance, and translating product and design requirements into reliable, production-grade UI.
+        </h2>
+        <p className="text-lg text-muted-foreground leading-7 ">
+         Software Engineer based in San Diego. I specialize in React and TypeScript — building scalable, accessible component systems and high-performance interfaces. I work closely with design and engineering teams to build modern product experiences with modern agentic workflows. focusing on performace, WCAG compliance, and turning product requirements into reliable, production-grade UI.
         </p>
       </section>
-
-      <Divider />
-
-      {/* Past Works Carousel */}
-      <Section label="The Work">
-        <WorksCarousel />
-      </Section>
-
-        <Divider />
-
-      {/* Skills */}
+            {/* Skills */}
       <Section label="skills & expertise">
         <div className="flex flex-wrap gap-1.5">
           {[
-            "next.js",
+            "JavaScript",
+              "typescript",
             "react",
-            "typescript",
+          "Agentic workflows",
+          "claude",
+          "copilot",
+          "MCP",
+            "next.js",
+            "A/B testing",
             "tailwind / scss / css",
             "component architecture",
-            "design systems",
             "graphql",
             "Rest APIs",
             "state management",
             "wcag / a11y",
             "core web vitals",
             "shadcn / bootstrap / baseui / mui",
-            
-            
             "ci/cd",
             "web performance",
+            "Figma",
+            "Photoshop",
+            "Jira",
           ].map((s) => (
-            <span
+            <Badge
               key={s}
-              className="text-[10px] tracking-widest uppercase bg-secondary text-muted-foreground px-2.5 py-1 rounded border border-border"
+              className="tracking-widest uppercase bg-secondary text-muted-foreground px-2.5 py-1 rounded border border-border"
             >
               {s}
-            </span>
+            </Badge>
           ))}
         </div>
       </Section>
+            <Divider />
 
-      {/* Experience */}
-      <Section label="experience">
+            {/* Experience */}
+      <Section label="Work Experience">
         {experience.map((job) => (
           <div key={job.company} className="mb-7 last:mb-0">
             <div className="flex justify-between items-baseline mb-1">
-              <span className="text-xs font-medium text-foreground">{job.company}</span>
-              <span className="text-[10px] text-muted-foreground tracking-wide">{job.period}</span>
+              <span className="font-semibold text-foreground">{job.company}</span>
+              <span className=" text-muted-foreground tracking-wide">{job.period}</span>
             </div>
-            <div className="text-[11px] text-muted-foreground mb-2">{job.title}</div>
-            <ul className="space-y-0.5">
+            <div className="italic mb-2">{job.title}</div>
+            <ul className="space-y-2">
               {job.bullets.map((b, i) => (
-                <li key={i} className="text-[11px] text-muted-foreground pl-3 relative before:content-['—'] before:absolute before:left-0 before:text-border">
-                  {b}
-                </li>
+<li key={i} className="flex items-start gap-2 text-muted-foreground">
+  <CircleSmall className="mt-1 shrink-0" size={15} />
+  <span>{b}</span>
+</li>
               ))}
             </ul>
           </div>
@@ -102,12 +81,29 @@ export default function Home() {
 
       <Divider />
 
+      {/* Past Works Carousel */}
+      <Section label="Featured Works">
+        <WorksCarousel />
+      </Section>
+
+      <Divider />
+
+
+
+      {/* Education */}
+      <Section label="About Me">
+        <p className="text-foreground">Raised in rural Illinois in a town of 1200. Post high school I rambled around Wyoming as a professional ski bum. </p> <p> Studied in Chicago to become a Graphic Designer turned Software Engineer. </p> <p>Husband, animal lover, human leading with kindness. </p> <p>Currently calling San Diego home.</p>
+
+      </Section>
+    <Divider />
+
       {/* Education */}
       <Section label="education">
-        <div className="text-xs text-foreground">Web Design & Interactive Media — BFA</div>
-        <div className="text-[11px] text-muted-foreground mt-0.5">
+                <div className=" text-muted-foreground mt-0.5">
           Illinois Institute of Art · 2009 – 2012
         </div>
+        <div className=" text-foreground">Web Design & Interactive Media — BFA</div>
+
       </Section>
 
     </main>
@@ -124,7 +120,7 @@ function Section({ label, children }: { label: string; children: React.ReactNode
   return (
     <section className="mb-10 last:mb-0">
       <div className="flex items-center gap-2.5 mb-5">
-        <h2 className="text-[10px] tracking-[.2em] uppercase text-muted-foreground/60 shrink-0">
+        <h2 className="font-bold tracking-[.2em] uppercase text-muted-foreground/60 shrink-0">
           {label}
         </h2>
         <div className="flex-1 h-px bg-border" />
@@ -145,6 +141,8 @@ const experience = [
       "Estimate, plan and develop interfaces collaboratively in an agile environment between product, design, and backend engineering teams.",
       "Contribute in peer reviews to maintain code quality and establish engineering standards across the team.",
       "Implement and maintain a React component library and design system used across multiple products, ensuring accessibility, performance, and consistency.",
+      "Implement standards and quality for Agentic workflows using Copilot and Claude",
+      "Write thorough tests and documentation to ensure long-term maintainability and stability of codebases.",
     ],
   },
   {
