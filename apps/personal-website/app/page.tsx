@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { WorksCarousel } from "@/components/WorksCarousel"
 import { Terminal } from 'lucide-react';
 import { CircleSmall } from 'lucide-react';
+import Image from "next/image";
 export default function Home() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-16 pb-24 ">
@@ -16,9 +17,45 @@ export default function Home() {
           Frontend Software Engineer
         </h2>
         <p className="text-lg text-muted-foreground leading-7 ">
-         Software Engineer based in San Diego. I specialize in React and TypeScript — building scalable, accessible component systems and high-performance interfaces. I work closely with design and engineering teams to build modern product experiences, with a focus on performace, WCAG compliance, and turning product requirements into reliable, production-grade UI.
+         Software Engineer based in San Diego. I specialize in React and TypeScript — building scalable, accessible component systems and high-performance interfaces. I work closely with design and engineering teams to build modern product experiences with modern agentic workflows. focusing on performace, WCAG compliance, and turning product requirements into reliable, production-grade UI.
         </p>
       </section>
+            {/* Skills */}
+      <Section label="skills & expertise">
+        <div className="flex flex-wrap gap-1.5">
+          {[
+            "JavaScript",
+              "typescript",
+            "react",
+          "Agentic workflows",
+          "claude",
+          "copilot",
+          "MCP",
+            "next.js",
+            "A/B testing",
+            "tailwind / scss / css",
+            "component architecture",
+            "graphql",
+            "Rest APIs",
+            "state management",
+            "wcag / a11y",
+            "core web vitals",
+            "shadcn / bootstrap / baseui / mui",
+            "ci/cd",
+            "web performance",
+            "Figma",
+            "Photoshop",
+            "Jira",
+          ].map((s) => (
+            <Badge
+              key={s}
+              className="tracking-widest uppercase bg-secondary text-muted-foreground px-2.5 py-1 rounded border border-border"
+            >
+              {s}
+            </Badge>
+          ))}
+        </div>
+      </Section>
             <Divider />
 
             {/* Experience */}
@@ -51,41 +88,14 @@ export default function Home() {
 
       <Divider />
 
-      {/* Skills */}
-      <Section label="skills & expertise">
-        <div className="flex flex-wrap gap-1.5">
-          {[
-            
-            "react",
-            "typescript",
-            "next.js",
-            "tailwind / scss / css",
-            "component architecture",
-            "graphql",
-            "Rest APIs",
-            "state management",
-            "wcag / a11y",
-            "core web vitals",
-            "shadcn / bootstrap / baseui / mui",
-            "ci/cd",
-            "web performance",
-            "Figma",
-            "Photoshop",
-            "Jira",
-          ].map((s) => (
-            <Badge
-              key={s}
-              className="tracking-widest uppercase bg-secondary text-muted-foreground px-2.5 py-1 rounded border border-border"
-            >
-              {s}
-            </Badge>
-          ))}
-        </div>
+
+
+      {/* Education */}
+      <Section label="About Me">
+        <p className="text-foreground">Raised in rural Illinois in a town of 1200. Post high school I rambled around Wyoming as a professional ski bum. </p> <p> Studied in Chicago to become a Graphic Designer turned Software Engineer. </p> <p>Husband, animal lover, human leading with kindness. </p> <p>Currently calling San Diego home.</p>
+
       </Section>
-
-
-
-      <Divider />
+    <Divider />
 
       {/* Education */}
       <Section label="education">
