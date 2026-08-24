@@ -20,7 +20,7 @@ export default function Home() {
           TypeScript and Next.js — building scalable, accessible component
           systems and high-performance interfaces. I work closely with design
           and engineering teams to build modern product experiences with modern
-          agentic workflows. focusing on performace, WCAG compliance, and
+          agentic workflows. focusing on performance, WCAG compliance, and
           turning product requirements into reliable, production-grade UI.
         </p>
       </section>
