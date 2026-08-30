@@ -160,13 +160,11 @@ const experience = [
   {
     company: "NewsBank Inc",
     period: "2018 – present",
-    title: "Senior Software Engineer",
+    title: "Software Engineer II",
     bullets: [
-      "Estimate, plan and develop interfaces collaboratively in an agile environment between product, design, and backend engineering teams.",
-      "Contribute in peer reviews to maintain code quality and establish engineering standards across the team.",
-      "Implement and maintain a React component library and design system used across multiple products, ensuring accessibility, performance, and consistency.",
-      "Implement standards and quality for Agentic workflows using Copilot and Claude",
-      "Write thorough tests and documentation to ensure long-term maintainability and stability of codebases.",
+      "Led frontend development on a ground-up rebuild of genealogybank.com from Drupal to React, Next.js, and Postgres — including a new component library and design system — improving performance and enabling faster feature delivery across the platform.",
+      "Championed adoption of AI-assisted development tools (Claude, GitHub Copilot) across the engineering team, shifting workflows toward faster iteration and code review.",
+      "Shipped new features and interfaces for genealogybank.com on a Drupal, HTML, SASS, and JavaScript stack, expanding product capabilities for a consumer genealogy platform.",
     ],
   },
   {
