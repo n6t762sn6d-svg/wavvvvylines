@@ -1,99 +1,124 @@
 // components/WorksCarousel.tsx
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useRef, useState, useCallback, useEffect } from "react"
-import { ArrowLeft, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { cn } from "@/lib/utils"
-import { ExternalLink } from 'lucide-react';
+import Image from "next/image";
+import { useRef, useState, useCallback, useEffect } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import { ExternalLink } from "lucide-react";
 const works = [
   {
-    tags: ["react", "next.js", "tailwind","typescript", "php",  "ci/cd", "bootstrap", "mui"],
+    tags: [
+      "react",
+      "next.js",
+      "tailwind",
+      "typescript",
+      "php",
+      "ci/cd",
+      "bootstrap",
+      "mui",
+    ],
     title: "GenealogyBank",
-    blurb: "Genealogy research platfrom built with React, TypeScript, Jest, Next.js, PHP, Tailwind, traditional CSS, MUI and Drupal paired with agentic workflows.",
+    blurb:
+      "Genealogy research platform built with React, TypeScript, Jest, Next.js, PHP, Tailwind, traditional CSS, MUI and Drupal paired with agentic workflows.",
     url: "https://www.genealogybank.com/",
     image: "/work-images/genealogybank.png",
   },
-    {
+  {
     tags: ["e-commerce", "magento", "wordpress", "javascript", "html", "css"],
     title: "Electric California",
-    blurb: "Lifestyle apparel brand Electric California custom designed e-commerce presence built with Magento and WordPress.",
+    blurb:
+      "Lifestyle apparel brand Electric California custom designed e-commerce presence built with Magento and WordPress.",
     url: "http://www.electriccalifornia.com/",
     image: "/work-images/electric-california.png",
   },
   {
     tags: ["html", "sass", "node", "php", "api"],
     title: "Zipquote",
-    blurb: "Ad-tech platform for insurance quote generation built with Node.js, PHP, REST API integrations and custom a/b testing software.",
+    blurb:
+      "Ad-tech platform for insurance quote generation built with Node.js, PHP, REST API integrations and custom a/b testing software.",
     url: "http://zipquote.com",
     image: "/work-images/zipquote-platform.png",
   },
 
   {
-    tags: [ "conversion optimization", "node", "performance", "a/b testing", "javascript"],
+    tags: [
+      "conversion optimization",
+      "node",
+      "performance",
+      "a/b testing",
+      "javascript",
+    ],
     title: "Instant Checkmate",
-    blurb: "People search platform built on top of Node.js, with a focus on conversion optimization, performance, and a/b testing.",
+    blurb:
+      "People search platform built on top of Node.js, with a focus on conversion optimization, performance, and a/b testing.",
     url: "http://www.instantcheckmate.com",
     image: "/work-images/instantcheckmate.png",
   },
   {
-    tags: ["html", "css", "js", 'razor', '.net'],
+    tags: ["html", "css", "js", "razor", ".net"],
     title: "PitchEngine",
-    blurb: "PR and media platform disrupting the traditional press release model, built with ASP.NET, Razor, HTML, CSS and JavaScript.",
+    blurb:
+      "PR and media platform disrupting the traditional press release model, built with ASP.NET, Razor, HTML, CSS and JavaScript.",
     url: "http://www.pitchengine.com",
     image: "/work-images/pitch-engine.jpg",
   },
-]
+];
 
-const CARD_WIDTH = 272
-const GAP = 10
+const CARD_WIDTH = 272;
+const GAP = 10;
 
 export function WorksCarousel() {
-  const [idx, setIdx] = useState(0)
-  const [visibleCount, setVisibleCount] = useState(1)
-  const wrapRef = useRef<HTMLDivElement>(null)
-  const touchStartX = useRef(0)
-  const carouselRef = useRef<HTMLDivElement>(null)
+  const [idx, setIdx] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(1);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   // Recalculate visible cards on resize
   useEffect(() => {
     const measure = () => {
       if (wrapRef.current) {
-        const w = wrapRef.current.offsetWidth
-        setVisibleCount(Math.max(1, Math.floor(w / (CARD_WIDTH + GAP))))
+        const w = wrapRef.current.offsetWidth;
+        setVisibleCount(Math.max(1, Math.floor(w / (CARD_WIDTH + GAP))));
       }
-    }
-    measure()
-    const ro = new ResizeObserver(measure)
-    if (wrapRef.current) ro.observe(wrapRef.current)
-    return () => ro.disconnect()
-  }, [])
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    if (wrapRef.current) ro.observe(wrapRef.current);
+    return () => ro.disconnect();
+  }, []);
 
-  const max = works.length - visibleCount
-  const go = useCallback((n: number) => setIdx(Math.max(0, Math.min(n, max))), [max])
+  const max = works.length - visibleCount;
+  const go = useCallback(
+    (n: number) => setIdx(Math.max(0, Math.min(n, max))),
+    [max],
+  );
 
   // Clamp idx when viewport resizes
-  useEffect(() => { setIdx((i) => Math.min(i, max)) }, [max])
+  useEffect(() => {
+    setIdx((i) => Math.min(i, max));
+  }, [max]);
 
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (carouselRef.current?.contains(document.activeElement)) {
         if (e.key === "ArrowLeft") {
-          e.preventDefault()
-          go(idx - 1)
+          e.preventDefault();
+          go(idx - 1);
         } else if (e.key === "ArrowRight") {
-          e.preventDefault()
-          go(idx + 1)
+          e.preventDefault();
+          go(idx + 1);
         }
       }
-    }
+    };
 
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [idx, go])
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [idx, go]);
 
   return (
     <div
@@ -111,10 +136,12 @@ export function WorksCarousel() {
             gap: GAP,
             transform: `translateX(-${idx * (CARD_WIDTH + GAP)}px)`,
           }}
-          onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX }}
+          onTouchStart={(e) => {
+            touchStartX.current = e.touches[0].clientX;
+          }}
           onTouchEnd={(e) => {
-            const dx = touchStartX.current - e.changedTouches[0].clientX
-            if (Math.abs(dx) > 40) go(dx > 0 ? idx + 1 : idx - 1)
+            const dx = touchStartX.current - e.changedTouches[0].clientX;
+            if (Math.abs(dx) > 40) go(dx > 0 ? idx + 1 : idx - 1);
           }}
         >
           {works.map((w) => (
@@ -147,7 +174,11 @@ export function WorksCarousel() {
         </Button>
 
         {/* Dots */}
-        <div className="flex gap-1 ml-1" role="tablist" aria-label="Work carousel slides">
+        <div
+          className="flex gap-1 ml-1"
+          role="tablist"
+          aria-label="Work carousel slides"
+        >
           {works.map((_, i) => (
             <button
               key={i}
@@ -157,14 +188,16 @@ export function WorksCarousel() {
               onClick={() => go(i)}
               className={cn(
                 "h-1 w-1 rounded-full border transition-all duration-200 cursor-pointer",
-                i === idx ? "bg-muted-foreground border-muted-foreground w-3" : "bg-transparent border-border"
+                i === idx
+                  ? "bg-muted-foreground border-muted-foreground w-3"
+                  : "bg-transparent border-border",
               )}
             ></button>
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 /* ── Single card ── */
@@ -176,13 +209,12 @@ function WorkCard({
   url,
   image,
 }: {
-  tags: string[]
-  title: string
-  blurb: string
-  url: string
-  image: string
+  tags: string[];
+  title: string;
+  blurb: string;
+  url: string;
+  image: string;
 }) {
-
   return (
     <a
       href={url}
@@ -193,25 +225,23 @@ function WorkCard({
     >
       {/* Thumbnail */}
       <div className="h-[140px] bg-muted border-b border-border overflow-hidden flex items-center justify-center relative">
-     
-          <Image
-            src={image}
-            alt={title}
-            fill
-            sizes="272px"     
-            priority={false}
-            className="w-full h-full object-cover object-top"
-          />
-       
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="272px"
+          priority={false}
+          className="w-full h-full object-cover object-top"
+        />
       </div>
 
       {/* Info */}
       <div className="p-3.5">
-           <p className=" text-foreground mb-1.5 font-bold">{title} <ExternalLink className="inline" size={12}/></p>
+        <p className=" text-foreground mb-1.5 font-bold">
+          {title} <ExternalLink className="inline" size={12} />
+        </p>
         <p className=" text-muted-foreground leading-[1.7]">{blurb}</p>
-        
       </div>
-      
     </a>
-  )
+  );
 }

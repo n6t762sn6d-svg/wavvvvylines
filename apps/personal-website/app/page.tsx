@@ -159,8 +159,8 @@ function Section({
 const experience = [
   {
     company: "NewsBank Inc",
-    period: "2018 – present",
-    title: "Software Engineer II",
+    period: "2018 – 2026",
+    title: "Senior Frontend Developer",
     bullets: [
       "Led frontend development on a ground-up rebuild of genealogybank.com from Drupal to React, Next.js, and Postgres — including a new component library and design system — improving performance and enabling faster feature delivery across the platform.",
       "Championed adoption of AI-assisted development tools (Claude, GitHub Copilot) across the engineering team, shifting workflows toward faster iteration and code review.",
