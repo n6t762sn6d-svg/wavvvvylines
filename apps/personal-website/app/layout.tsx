@@ -18,11 +18,11 @@ export const metadata: Metadata = {
       'en-US': '/en-US',
     },
   },
-  title: "Casey Lentz — Senior Software Engineer",
-  description: "Senior Software Engineer focused on scalable UI systems, design patterns, and cross-functional technical leadership.",
+  title: "Casey Lentz — Senior Frontend Engineer",
+  description: "Senior frontend engineer specializing in React, TypeScript and Next.js, design systems, accessibility, and web performance.",
   openGraph: {
-    title: "Casey Lentz - Senior Software Engineer",
-    description: "Senior Software Engineer focused on scalable UI systems, design patterns, and cross-functional technical leadership.",
+    title: "Casey Lentz - Senior Frontend Engineer",
+    description: "Senior frontend engineer specializing in React, TypeScript and Next.js, design systems, accessibility, and web performance.",
     url: siteUrl,
     siteName: "Wavvvvylines",
     images: [
@@ -30,15 +30,15 @@ export const metadata: Metadata = {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Casey Lentz - Senior Software Engineer"
+        alt: "Casey Lentz - Senior Frontend Engineer"
       }
     ],
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Casey Lentz - Senior Software Engineer",
-    description: "Senior Software Engineer focused on scalable UI systems, design patterns, and cross-functional technical leadership.",
+    title: "Casey Lentz - Senior Frontend Engineer",
+    description: "Senior frontend engineer specializing in React, TypeScript and Next.js, design systems, accessibility, and web performance.",
     images: [`${siteUrl}/og-image.png`]
   }
 };
