@@ -1,6 +1,7 @@
 // app/page.tsx
 import { Badge } from "@/components/ui/badge";
 import { WorksCarousel } from "@/components/WorksCarousel";
+import { Contact } from "@/components/Contact";
 import { Terminal } from "lucide-react";
 import { CircleSmall } from "lucide-react";
 import Image from "next/image";
@@ -13,14 +14,14 @@ export default function Home() {
           Casey Lentz <Terminal className="inline" />
         </h1>
         <h2 className="text-[22px] font-bold tracking-tight leading-tight mb-4">
-          Frontend Software Engineer
+          Senior Frontend Engineer
         </h2>
         <p className="text-lg text-muted-foreground leading-7 ">
-          Software Engineer based in San Diego. I specialize in React,
+          Frontend engineer based in Oceanside, California. I specialize in React,
           TypeScript and Next.js — building scalable, accessible component
           systems and high-performance interfaces. I work closely with design
-          and engineering teams to build modern product experiences with modern
-          agentic workflows. focusing on performance, WCAG compliance, and
+          and engineering teams to build modern product experiences using agentic
+          workflows, with a focus on performance, WCAG compliance, and
           turning product requirements into reliable, production-grade UI.
         </p>
       </section>
@@ -111,18 +112,24 @@ export default function Home() {
           Engineer.{" "}
         </p>{" "}
         <p>Husband, animal lover, human leading with kindness. </p>{" "}
-        <p>Currently calling San Diego home.</p>
+        <p>Currently calling Oceanside, California home.</p>
       </Section>
       <Divider />
 
       {/* Education */}
       <Section label="education">
         <div className=" text-muted-foreground mt-0.5">
-          Illinois Institute of Art · 2009 – 2012
+          Illinois Institute of Art · 2007 – 2011
         </div>
         <div className=" text-foreground">
           Web Design & Interactive Media — BFA
         </div>
+      </Section>
+      <Divider />
+
+      {/* Contact */}
+      <Section label="contact">
+        <Contact />
       </Section>
     </main>
   );
